@@ -17,6 +17,7 @@ const templateTuit = {
 }
 
 const tuitsSlice = createSlice({
+
     name: 'tuits',
     initialState: tuits,
 

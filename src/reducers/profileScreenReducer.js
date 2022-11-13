@@ -7,7 +7,7 @@ const profileReducer = (state = false, action) => {  // initialize the reducer's
             return false;
         default:
             return state;
-    }                 // return the single static state
+    }
 };
 
 export default profileReducer;
