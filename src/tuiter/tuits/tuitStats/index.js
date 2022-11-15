@@ -40,11 +40,11 @@ const TuitStats = (
 
                     <a className="nav-link text-secondary fg-color-red" href="#">
                         <i className={tuit.liked? `bi bi-heart-fill ` : `bi bi-heart`} style={tuit.liked? {color:"red"}: {color:""}}>
-                            {/*<i className="bi bi-heart" style={tuit.liked?{fill:"red"}:{color:""}}>*/}
+                        {/*<i className="bi bi-heart" style={tuit.liked?{fill:"red"}:{color:""}}>*/}
                         </i>
                         {tuit.likes}
                         <div>
-                            Likes: {tuit.likes}
+                             Likes: {tuit.likes}
                             <i onClick={() => updateTuit(dispatch, {
                                 ...tuit,
                                 likes: tuit.likes + 1
@@ -62,5 +62,5 @@ const TuitStats = (
 
     );
 
-
+  
 }; export default TuitStats;

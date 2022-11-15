@@ -29,24 +29,24 @@ const templateTuit = {
 
 const tuitsSlice = createSlice({
 
-    name: 'tuits',
-    initialState,
+   name: 'tuits',
+   initialState,
 
     extraReducers: {
-        [findTuitsThunk.pending]:
-            (state) => {
-                state.loading = true
-                state.tuits = []
-            },
-        [findTuitsThunk.fulfilled]:
-            (state, { payload }) => {
-                state.loading = false
-                state.tuits = payload
-            },
-        [findTuitsThunk.rejected]:
-            (state) => {
-                state.loading = false
-            },
+       [findTuitsThunk.pending]:
+           (state) => {
+               state.loading = true
+               state.tuits = []
+           },
+       [findTuitsThunk.fulfilled]:
+           (state, { payload }) => {
+               state.loading = false
+               state.tuits = payload
+           },
+       [findTuitsThunk.rejected]:
+           (state) => {
+               state.loading = false
+           },
 
         [deleteTuitThunk.fulfilled] :
             (state, { payload }) => {
@@ -68,22 +68,22 @@ const tuitsSlice = createSlice({
             }
     },
 
-    reducers: {
-        deleteTuit(state, action) {
-            //console.log(tuits)
-            const index = state
-                .findIndex(tuit =>
-                    tuit._id === action.payload);
-            state.splice(index, 1);
-        },
+   reducers: {
+       deleteTuit(state, action) {
+           //console.log(tuits)
+           const index = state
+               .findIndex(tuit =>
+                              tuit._id === action.payload);
+           state.splice(index, 1);
+       },
 
-        createTuit(state, action) {
-            state.unshift({
-                ...action.payload,
-                ...templateTuit,
-                _id: (new Date()).getTime(),})
-        }
-    }
+       createTuit(state, action) {
+           state.unshift({
+                             ...action.payload,
+                             ...templateTuit,
+                             _id: (new Date()).getTime(),})
+       }
+   }
 });
 
 export const {createTuit,deleteTuit} = tuitsSlice.actions;
