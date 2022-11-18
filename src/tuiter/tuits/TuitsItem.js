@@ -31,33 +31,33 @@ const TuitsItem = (
     return(
         <li className="list-group-item">
             <div className="row">
-                    <div className="col-2">
-                        <img className="rounded-circle" src={require(`./spacex.png`)} width="100%"/>
-                    </div>
-                    <div className="col-10">
-                        <div>
-                            <i className="bi bi-x-lg float-end"
-                               onClick={() => deleteTuitHandler(tuit._id)}></i>
-                  <span>
+                <div className="col-2">
+                    <img className="rounded-circle" src={require(`./spacex.png`)} width="100%"/>
+                </div>
+                <div className="col-10">
+                    <div>
+                        <i className="bi bi-x-lg float-end"
+                           onClick={() =>deleteTuitHandler(tuit)}></i>
+                        <span>
                         {tuit.userName}
-                      <i className="bi bi-check-circle-fill"></i>
+                            <i className="bi bi-check-circle-fill"></i>
                         <span className="text-secondary">
                             {tuit.handle} {tuit.time}
                         </span>
                   </span>
-                            <div>
-                                {tuit.tuit}
-                            </div>
-                        </div>
-
                         <div>
-                            <TuitStats key={tuit._id} tuit={tuit}/>
+                            {tuit.tuit}
                         </div>
-
                     </div>
 
+                    <div>
+                        <TuitStats key={tuit._id} tuit={tuit}/>
+                    </div>
 
                 </div>
+
+
+            </div>
 
         </li>
 
